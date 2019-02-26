@@ -1,0 +1,13 @@
+{
+  "application_name": "S3 Bucket Clone",
+  "log_level": "info",
+  "local_S3":"local_S3",
+  "aws": {
+    "access_key_id": "<your access key>",
+    "secret_access_key": "<your secret key>",
+    "region": "eu-west-1",
+    "bucket": "<your bucket>",
+    "host": "https://s3-eu-west-1.amazonaws.com",
+    "rootDirectory": "<your root directory>"
+  }
+}

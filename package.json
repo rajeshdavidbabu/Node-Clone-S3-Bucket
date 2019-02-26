@@ -1,0 +1,25 @@
+{
+  "name": "Node-Clone-S3-Bucket",
+  "version": "0.1.0",
+  "description": "Clones S3 Bucket or any of its directory recursively and locally.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "fix-lint": "eslint . --fix",
+    "start": "node index.js"
+  },
+  "author": "Rajesh Babu",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.398.0",
+    "bunyan": "^1.8.12",
+    "graceful-fs": "^4.1.15",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
+  }
+}

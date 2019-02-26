@@ -1,0 +1,13 @@
+{
+  "application_name": "S3 Bucket Clone",
+  "log_level": "info",
+  "local_S3":"my_local_S3",
+  "aws": {
+    "access_key_id": "ABHGKGLTHGKH667676868",
+    "secret_access_key": "^O&^)&%JGGLKVKJCGJi9glygkiyfjvhvh",
+    "region": "eu-west-1",
+    "bucket": "rajesh-bucket",
+    "host": "https://s3-eu-west-1.amazonaws.com",
+    "rootDirectory": "raj_test/test_folder/"
+  }
+}
