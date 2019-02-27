@@ -1,4 +1,10 @@
 # Node Clone AWS S3 Bucket
+<p>
+  <a href="https://github.com/rajeshdavidbabu/Node-Clone-S3-Bucket/blob/master/LICENSE">
+    <img src="https://img.shields.io/npm/l/express.svg?maxAge=2592000&style=flat-square"
+         alt="License">
+  </a>
+</p>
 
 A Node.js Service to clone AWS S3 buckets locally, it can clone entire bucket or just only target directories inside a bucket.
 
