@@ -17,7 +17,7 @@ AWS-SDK is a set of Javascript methods to make our lives easier when working wit
 ## Detailed Description
 There are a lot of ways to clone/download an AWS S3 Bucket locally, the simplest way is of course to use an AWS CLI. As a Javascript developer, I was curious to implement this on Node and without using any CLI or other external applications.
 
-The Node service, once started, runs until all the directories are recursively cloned locally and the entire directory structure is maintained.
+The Node service, once started, creates a copy of the directory structure locally, followed by downloading files from AWS into their respective directories through writestreams.
 
 ## Requirements
 - Node 10.15.1 and above.
@@ -84,26 +84,14 @@ Every successful completion and error occurrence is accompanied by Bunyan logs. 
 
 ```
 **Success logs**: 
-{"name":"S3 Bucket Clone","hostname”:”host.com”,”pid":28856,"level":30,"DOWNLOAD_ERRORS_COUNT":0,"msg":"Failed file downloads","time":"2019-02-26T11:44:14.297Z","v":0}
 {"name":"S3 Bucket Clone","hostname”:”host.com.com","pid":28856,"level":30,"msg":"Cloning finished successfully !!!","time":"2019-02-26T11:44:14.298Z","v":0}
 
-**Success with some download failures logs**:
+**Failure logs**:
 {"name":"S3 Bucket Clone","hostname":"host.com","pid":29059,"level":50,"error":"Download failed","msg":"Error occured during download","time":"2019-02-26T12:49:16.510Z","v":0}
 {"name":"S3 Bucket Clone","hostname":"host.com","pid":29059,"level":50,"error":"Download failed","msg":"Error occured during download","time":"2019-02-26T12:49:16.839Z","v":0}
 {"name":"S3 Bucket Clone","hostname":"host.com","pid":29059,"level":30,"DOWNLOAD_ERRORS_COUNT":2,"msg":"Failed file downloads","time":"2019-02-26T12:49:17.143Z","v":0}
-{"name":"S3 Bucket Clone","hostname":"host.com","pid":29059,"level":30,"msg":"Cloning finished successfully !!!","time":"2019-02-26T12:49:17.143Z","v":0}
-
-**Failure logs**:
-{"name":"S3 Bucket Clone","hostname":"host.com","pid":29063,"level":30,"DOWNLOAD_ERRORS_COUNT":0,"msg":"Failed file downloads","time":"2019-02-26T12:50:56.679Z","v":0}
 {"name":"S3 Bucket Clone","hostname":"host.com","pid":29063,"level":50,"error":"Download failed","msg":"Cloning failed to finish, please try again !!!","time":"2019-02-26T12:50:56.679Z","v":0}
 ```
-
-## Important JS concepts to follow
-- No express (this project is express free and mostly pure Node JS).
-- Modular Folder Structure.
-- Recursive Async/Await (check service.js for more information)
-- AWS SDK usage
-- Logs
 
 ## Known Issues
 - This project ideally works seamlessly for small to medium sized buckets where all file-types are known. For large buckets full of unknowns, this is not suitable.
